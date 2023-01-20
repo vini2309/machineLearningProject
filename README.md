@@ -40,3 +40,4 @@ docker stop <container_ID>
 
 
 
+python setup.py install
