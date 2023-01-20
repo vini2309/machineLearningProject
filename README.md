@@ -41,3 +41,5 @@ docker stop <container_ID>
 
 
 python setup.py install
+
+when we run pip install -r requirements.txt it will install only requiremnets.txt modules, if we wrote "-e ." it will install the packages(Where "__init__" contains) too.
