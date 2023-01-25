@@ -43,3 +43,12 @@ docker stop <container_ID>
 python setup.py install
 
 when we run pip install -r requirements.txt it will install only requiremnets.txt modules, if we wrote "-e ." it will install the packages(Where "__init__" contains) too.
+
+
+Install ipynb kernel
+pip install ipykernel
+
+To read yaml file first need to install particular configuration
+pip install PyYAML
+
+Util folder contains reading the yaml file, creating pickle object and other important thngs which are ot in pipeline and those are helper functions that will use for our object. Those things will use in util folder
