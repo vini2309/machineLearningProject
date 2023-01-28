@@ -4,5 +4,3 @@ gunicorn
 sklearn
 pandas
 -e .
-tarfile
-six
