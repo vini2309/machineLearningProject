@@ -22,7 +22,7 @@ class Configuration:
         except Exception as e:
             raise HousingException(e,sys) from e
 
-    def get_data_ingestion_config(self) -> DataIngestionConfig:
+    def get_data_ingestion_config(self) -> DataIngestionConfig: #housing/artifact/data_ingestion/time_stamp/ingested_data,tgz_data and so on..
         try:
             artifact_dir = self.training_pipeline_config.artifact_dir
             data_ingestion_artifact_dir=os.path.join(
