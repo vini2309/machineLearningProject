@@ -2,5 +2,6 @@ numpy
 Flask
 gunicorn
 sklearn
+evidently
 pandas
 -e .
