@@ -8,7 +8,6 @@ Welcome to Machine Learning Housing Corporation! The goal of this project is to 
 - [Installation Instructions](#installation-instructions)
 - [Usage](#usage)
 - [Libraries and Dependencies](#libraries-and-dependencies)
-- [Project Structure](#project-structure)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
@@ -87,7 +86,7 @@ six
 dill
 Flask
 
-Usage
+## Usage
 Running Locally
 Create a app.py file with a sample Flask app:
 python
@@ -107,7 +106,7 @@ Stage changes: git add .
 Check status: git status
 Commit changes: git commit -m "<message>"
 Push changes: git push origin main
-Deployment
+##Deployment
 Heroku Deployment
 Create an account on Heroku and create an app.
 Gather these details for GitHub Actions setup:
@@ -120,14 +119,14 @@ Add necessary configurations in .github/workflows/main.yaml.
 Add repository secrets in GitHub under Settings > Secrets.
 Update .dockerignore with folders not needed in Docker image.
 Push changes to GitHub for CI/CD setup.
-Contributing
+##Contributing
 Follow these steps to contribute:
 Fork the repository.
 Create a new branch (git checkout -b feature/YourFeature).
 Commit your changes (git commit -m 'Add some feature').
 Push to the branch (git push origin feature/YourFeature).
 Open a pull request.
-License
+##License
 This project is licensed under the MIT License.
 Acknowledgments/References
 Thank you to all contributors and resources that supported this project.
