@@ -1,56 +1,133 @@
-# machineLearningProject
-ML end to end development
+# Housing Prediction
 
+## Objective
+Welcome to Machine Learning Housing Corporation! The goal of this project is to build a model to predict housing prices in California using census data. This dataset includes metrics such as population, median income, and median housing price for each block group in California. These block groups will be referred to as "districts." The model should learn from this data and predict the median housing price in any district given the other metrics.
 
-1. Github Account
-2. Heroku Account
-3. VS Code IDE
-4. GIT Cli
+## Table of Contents
+- [Main Steps for Machine Learning Projects](#main-steps-for-machine-learning-projects)
+- [Installation Instructions](#installation-instructions)
+- [Usage](#usage)
+- [Libraries and Dependencies](#libraries-and-dependencies)
+- [Project Structure](#project-structure)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-Creating conda environment
-....
-conda create -p venv python==3.7 -y
-....
+## Main Steps for Machine Learning Projects
+1. Look at the big picture.
+2. Get the data.
+3. Discover and visualize the data to gain insights.
+4. Prepare the data for Machine Learning algorithms.
+5. Select a model and train it.
+6. Fine-tune your model.
+7. Present your solution.
+8. Launch, monitor, and maintain your system.
 
-Command to install flask is first create rquirements file and give Flask in that file and pip install -r rquirements.txt
+## Installation Instructions
 
-To check remote url git remote -v
+### Prerequisites
+- GitHub account
+- VS Code IDE
+- Python 3.x
 
-To setup CI/Cd pipeline in heroku we need below 3 information:
-1) Heroku_email = gvineethkumarreddyrk@gmail.com
-2) Heroku_API_key = e18755f5-0527-4a42-9bed-42e9b6be0b14
-3) Heroku_App_Name = machine-learning-project
+### Setup
+1. **Create a GitHub Repository**
+   - Clone the repository to your system:
+     ```bash
+     git clone <github-url>
+     ```
+   - Open the folder in VS Code.
 
-BUILD DOCKER IMAGE
-docker build -t <image_name>:<tagname> .
-Note: Image name for docker should be small letters(Lowercase)
+2. **Project Folder Structure**
+   - Download and run the initial bash script:
+     ```bash
+     bash <script_name>
+     ```
 
-To list docker images
-docker images
+3. **Setup Python Environment**
+   - Update `setup.py` with:
+     ```python
+     from setuptools import setup, find_packages
 
-To RUN docker image
-docker run -p 5000:5000 -e PORT=5000 <dockerimageID>(need to give the image ID)
-Here 5000 is the port number
+     REQUIREMENT_FILE_NAME = "requirements.txt"
+     REMOVE_PACKAGE = "-e ."
 
-To check runnig docker containers
-docker ps
+     def get_requirement_list(requirement_file_name=REQUIREMENT_FILE_NAME) -> list:
+         try:
+             requirement_list = None
+             with open(requirement_file_name) as requirement_file:
+                 requirement_list = [requirement.replace("\n", "") for requirement in requirement_file]
+                 requirement_list.remove(REMOVE_PACKAGE)
+             return requirement_list
+         except Exception as e:
+             raise e
 
-To stop docker conatainer
-docker stop <container_ID>
+     setup(
+         name="Housing price prediction",
+         license="MIT",
+         version="0.0.0",
+         description="Project has been completed.",
+         author="Avnish Yadav",
+         packages=find_packages(),
+         install_requires=get_requirement_list()
+     )
+     ```
 
+## Libraries and Dependencies
 
+Add the following libraries to `requirements.txt`:
+```plaintext
+scikit-learn
+scipy 
+PyYAML
+gunicorn
+pandas
+-e .
+six
+dill
+Flask
 
-python setup.py install
+Usage
+Running Locally
+Create a app.py file with a sample Flask app:
+python
+from flask import Flask
 
-when we run pip install -r requirements.txt it will install only requiremnets.txt modules, if we wrote "-e ." it will install the packages(Where "__init__" contains) too.
+app = Flask(__name__)
 
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
 
-Install ipynb kernel
-pip install ipykernel
+if __name__ == '__main__':
+    app.run(debug=True)
 
-To read yaml file first need to install particular configuration
-pip install PyYAML
-
-Util folder contains reading the yaml file, creating pickle object and other important thngs which are ot in pipeline and those are helper functions that will use for our object. Those things will use in util folder
-
-Look into EVIDENTLY AI
+To send changes to GitHub:
+Stage changes: git add .
+Check status: git status
+Commit changes: git commit -m "<message>"
+Push changes: git push origin main
+Deployment
+Heroku Deployment
+Create an account on Heroku and create an app.
+Gather these details for GitHub Actions setup:
+Heroku API Key
+Heroku App Name
+Heroku Account Email ID
+Docker Setup
+Create .dockerignore and Dockerfile.
+Add necessary configurations in .github/workflows/main.yaml.
+Add repository secrets in GitHub under Settings > Secrets.
+Update .dockerignore with folders not needed in Docker image.
+Push changes to GitHub for CI/CD setup.
+Contributing
+Follow these steps to contribute:
+Fork the repository.
+Create a new branch (git checkout -b feature/YourFeature).
+Commit your changes (git commit -m 'Add some feature').
+Push to the branch (git push origin feature/YourFeature).
+Open a pull request.
+License
+This project is licensed under the MIT License.
+Acknowledgments/References
+Thank you to all contributors and resources that supported this project.
